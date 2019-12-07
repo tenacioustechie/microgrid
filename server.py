@@ -30,7 +30,7 @@ GPIO.output(comcen, GPIO.LOW)
 
 from bottle import route, run, template, post, get
 
-@route('')
+@route('/')
 def home():
   return template('home')
 
@@ -44,7 +44,7 @@ def home():
 
 @route('/hello/<name>')
 def index(name):
-    return template('<b>Hello {{name}}</b>!', name=name)
+  return template('<b>Hello {{name}}</b>!', name=name)
 
 
 @post('/api/house1/<onoff>')

@@ -5,6 +5,16 @@
     <link rel="stylesheet" href="styles.css"> 
     <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+    <script>
+function post(url, value) {
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", url, true);
+  xhr.setRequestHeader('Content-Type', 'application/json');
+  xhr.send(JSON.stringify({
+      value: value
+  }));
+}
+    </script>
 </head>
 <body style="background-color:#FFAA00">
 
@@ -52,7 +62,7 @@
     </div>
 
     <div class="sell2">
-        <button>
+        <button onclick="post("/api/house2/on"); retur false;">
             Sell to house 2
         </button>
     </div>
