@@ -62,31 +62,31 @@ function post(url) {
     </div>
 
     <div class="sell2">
-        <button onclick="post("/api/house2/on"); return false;">
+        <button onclick="post('/api/house2/on'); return false;">
             Sell to house 2
         </button>
     </div>
 
     <div class="sell3">
-            <button onclick="post("/api/house3/on"); return false;>
+            <button onclick="post('/api/house3/on'); return false;">
                 Sell to house 3
             </button>
         </div>
 
     <div class="sellC">
-            <button>
+            <button onclick="post('/api/comcen/on'); return false;">
                 Donate to community centre
             </button>
         </div>
 
     <div class="buy2">
-        <button>
+        <button onclick="post('/api/house2/off'); return false;">
             Buy from house 2
         </button>
     </div>
 
     <div class="buy3">
-            <button>
+            <button onclick="post('/api/house3/off'); return false;">
                 Buy from house 3
             </button>
         </div>
