@@ -28,7 +28,7 @@ GPIO.output(house3, GPIO.LOW)
 GPIO.output(comcen, GPIO.LOW)
 
 
-from bottle import route, run, template
+from bottle import route, run, template, post, get
 
 @route('/hello/<name>')
 def index(name):
