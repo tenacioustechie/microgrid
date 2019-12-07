@@ -39,28 +39,28 @@ def index(name):
 def house1(onoff):
   if (onoff == 'on'):
     GPIO.output(house1, GPIO.HIGH)
-  else
+  else:
     GPIO.output(house1, GPIO.LOW)
 
 @post('/api/house2/<onoff>')
 def house1(onoff):
   if (onoff == 'on'):
     GPIO.output(house2, GPIO.HIGH)
-  else
+  else:
     GPIO.output(house2, GPIO.LOW)
 
 @post('/api/house3/<onoff>')
 def house1(onoff):
   if (onoff == 'on'):
     GPIO.output(house3, GPIO.HIGH)
-  else
+  else:
     GPIO.output(house3, GPIO.LOW)
 
 @post('/api/comcen/<onoff>')
 def house1(onoff):
   if (onoff == 'on'):
     GPIO.output(comcen, GPIO.HIGH)
-  else
+  else:
     GPIO.output(comcen, GPIO.LOW)
 
 
