@@ -31,15 +31,15 @@ GPIO.output(comcen, GPIO.LOW)
 from bottle import route, run, template, post, get
 
 @route('')
-def home:
+def home():
   return template('home')
 
 @route('/main')
-def home:
+def home():
   return template('main')
 
 @route('/styles.css')
-def home:
+def home():
   return template('styles')
 
 @route('/hello/<name>')
