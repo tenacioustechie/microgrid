@@ -6,12 +6,12 @@
     <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
     <script>
-function post(url, value) {
+function post(url) {
   var xhr = new XMLHttpRequest();
   xhr.open("POST", url, true);
   xhr.setRequestHeader('Content-Type', 'application/json');
   xhr.send(JSON.stringify({
-      value: value
+      value: "nothing"
   }));
 }
     </script>
@@ -62,13 +62,13 @@ function post(url, value) {
     </div>
 
     <div class="sell2">
-        <button onclick="post("/api/house2/on"); retur false;">
+        <button onclick="post("/api/house2/on"); return false;">
             Sell to house 2
         </button>
     </div>
 
     <div class="sell3">
-            <button>
+            <button onclick="post("/api/house3/on"); return false;>
                 Sell to house 3
             </button>
         </div>
