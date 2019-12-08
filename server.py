@@ -1,5 +1,5 @@
 # External module imports
-import os
+import platform
 import time
 from bottle import route, run, template, post, get
 runGpio = False
