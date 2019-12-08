@@ -84,7 +84,6 @@ def house1post(onoff):
     GPIO.output(house1, GPIO.HIGH)
   else:
     GPIO.output(house1, GPIO.LOW)
-  return (onoff == 'on')
 
 @post('/api/house2/<onoff>')
 def house2post(onoff):
@@ -92,7 +91,6 @@ def house2post(onoff):
     GPIO.output(house2, GPIO.HIGH)
   else:
     GPIO.output(house2, GPIO.LOW)
-  return (onoff == 'on')
 
 @post('/api/house3/<onoff>')
 def house3post(onoff):
@@ -100,7 +98,6 @@ def house3post(onoff):
     GPIO.output(house3, GPIO.HIGH)
   else:
     GPIO.output(house3, GPIO.LOW)
-  return (onoff == 'on')
 
 @post('/api/house4/<onoff>')
 def house4post(onoff):
@@ -108,7 +105,6 @@ def house4post(onoff):
     GPIO.output(house4, GPIO.HIGH)
   else:
     GPIO.output(house4, GPIO.LOW)
-  return (onoff == 'on')
 
 
 
