@@ -78,16 +78,21 @@ def index(name):
   return template('<b>Hello {{name}}</b>!', name=name)
 
 
-@post('/api/<house>/<onoff>')
+@post('/api/house1/<onoff>')
 def house1post(house, onoff):
   if (onoff == 'on'):
     GPIO.output(house1, GPIO.HIGH)
   else:
     GPIO.output(house1, GPIO.LOW)
+  return (onoff == 'on')
 
-@post('/api/<house>/<onoff>')
-def house2post(house, onoff):
-  return updateHouse( house, onoff)
+@post('/api/house2/<onoff>')
+def house2post(onoff):
+  if (onoff == 'on'):
+    GPIO.output(house2, GPIO.HIGH)
+  else:
+    GPIO.output(house2, GPIO.LOW)
+  return (onoff == 'on')
 
 @post('/api/house3/<onoff>')
 def house3post(onoff):
@@ -95,6 +100,7 @@ def house3post(onoff):
     GPIO.output(house3, GPIO.HIGH)
   else:
     GPIO.output(house3, GPIO.LOW)
+  return (onoff == 'on')
 
 @post('/api/comcen/<onoff>')
 def comcenpost(onoff):
@@ -102,6 +108,7 @@ def comcenpost(onoff):
     GPIO.output(comcen, GPIO.HIGH)
   else:
     GPIO.output(comcen, GPIO.LOW)
+  return (onoff == 'on')
 
 
 
