@@ -51,10 +51,10 @@
 
     <div class="control-options">
       <div class="option"><button onclick="sellToHouse2(); return false;">Sell to House 2</button></div>
-      <div class="option"><button onclick="return false;">Sell to House 3</button></div>
-      <div class="option"><button onclick="return false;">Donate to Community Centre</button></div>
-      <div class="option"><button onclick="return false;">Buy from House 2</button></div>
-      <div class="option"><button onclick="return false;">Buy from House 3</button></div>
+      <div class="option"><button onclick="sellToHouse3(); return false;">Sell to House 3</button></div>
+      <div class="option"><button onclick="sellToHouse4(); return false;">Donate to Community Centre</button></div>
+      <div class="option"><button onclick="buyFromHouse2(); return false;">Buy from House 2</button></div>
+      <div class="option"><button onclick="buyFromHouse3(); return false;">Buy from House 3</button></div>
     </div>
 
   </div>
@@ -147,6 +147,66 @@
       } else {
         house1power = house1power - 20;
         house2power = house2power + 20;
+      }
+      updateDisplay();
+    }
+    function buyFromHouse2() {
+      if ( house2power < 40) {
+        alert("you can't buy power when they have less than 20%");
+        return;
+      }
+      // update power for each house
+      if (house1power > 80) {
+        house2power = house2power - (100-house1power);
+        house1power = 100;
+      } else {
+        house2power = house2power - 20;
+        house1power = house1power + 20;
+      }
+      updateDisplay();
+    }
+    function sellToHouse3() {
+      if ( house1power < 40) {
+        alert("you can't sell power when you have less than 20%");
+        return;
+      }
+      // update power for each house
+      if (house3power > 80) {
+        house1power = house1power - (100-house3power);
+        house3power = 100;
+      } else {
+        house1power = house1power - 20;
+        house3power = house3power + 20;
+      }
+      updateDisplay();
+    }
+    function buyFromHouse3() {
+      if ( house3power < 40) {
+        alert("you can't buy power when they have less than 20%");
+        return;
+      }
+      // update power for each house
+      if (house1power > 80) {
+        house3power = house3power - (100-house1power);
+        house1power = 100;
+      } else {
+        house3power = house3power - 20;
+        house1power = house1power + 20;
+      }
+      updateDisplay();
+    }
+    function sellToHouse4() {
+      if ( house1power < 40) {
+        alert("you can't sell power when you have less than 20%");
+        return;
+      }
+      // update power for each house
+      if (house4power > 80) {
+        house1power = house1power - (100-house4power);
+        house4power = 100;
+      } else {
+        house1power = house1power - 20;
+        house4power = house4power + 20;
       }
       updateDisplay();
     }
