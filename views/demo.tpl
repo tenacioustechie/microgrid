@@ -9,7 +9,7 @@
 <body>
   <div class="container">
 
-    <div class="house-display-box">
+    <div class="house-display-box" id="house1">
       <div class="house-heading">My House 1</div>
       <div class="house-display" id="house1-display"></div>
       <div class="house-subtext">battery level</div>
@@ -19,7 +19,7 @@
       </div>
     </div>
 
-    <div class="house-display-box">
+    <div class="house-display-box" id="house2">
       <div class="house-heading">House 2</div>
       <div class="house-display" id="house2-display"></div>
       <div class="house-subtext">battery level</div>
@@ -29,7 +29,7 @@
       </div>
     </div>
 
-    <div class="house-display-box">
+    <div class="house-display-box" id="house3">
       <div class="house-heading">House 3</div>
       <div class="house-display" id="house3-display"></div>
       <div class="house-subtext">battery level</div>
@@ -39,7 +39,7 @@
       </div>
     </div>
 
-    <div class="house-display-box">
+    <div class="house-display-box" id="house4">
       <div class="house-heading">Community Centre</div>
       <div class="house-display" id="house4-display"></div>
       <div class="house-subtext">battery level</div>
@@ -87,22 +87,23 @@
     function onTick() {
       console.log("updating power...");
       house1power = updateHouseValue(house1lightson, house1hassolar, house1power);
-      if (house1power == 0) { house1lightson = false; house1LightsOff(); }
+      if (house1power == 0) { house1LightsOff(); }
       document.querySelector('#house1-display').textContent = house1power + "%";
+      
       console.log("house1 power", house1power);
 
       house2power = updateHouseValue(house2lightson, house2hassolar, house2power);
-      if (house2power == 0) { house2lightson = false; house2LightsOff(); }
+      if (house2power == 0) { house2LightsOff(); }
       document.querySelector('#house2-display').textContent = house2power + "%";
       console.log("house2 power", house2power);
 
       house3power = updateHouseValue(house3lightson, house3hassolar, house3power);
-      if (house3power == 0) { house3lightson = false; house3LightsOff(); }
+      if (house3power == 0) { house3LightsOff(); }
       document.querySelector('#house3-display').textContent = house3power + "%";
       console.log("house3 power", house3power);
 
       house4power = updateHouseValue(house4lightson, house4hassolar, house4power);
-      if (house4power == 0) { house4lightson = false; house4LightsOff(); }
+      if (house4power == 0) { house4LightsOff(); }
       document.querySelector('#house4-display').textContent = house4power + "%";
       console.log("house4 power", house4power);
     }
@@ -131,34 +132,42 @@
     function house1LightsOn() {
       post('/api/house1/on');
       house1lightson = true;
+      document.querySelector('#house1').backgroundColor = "#ff9900";
     }
     function house1LightsOff() {
       post('/api/house1/off');
       house1lightson = false;
+      document.querySelector('#house1').backgroundColor = "#C0C0C0";
     }
     function house2LightsOn() {
       post('/api/house2/on');
       house2lightson = true;
+      document.querySelector('#house2').backgroundColor = "#ff9900";
     }
     function house2LightsOff() {
       post('/api/house2/off');
       house2lightson = false;
+      document.querySelector('#house2').backgroundColor = "#C0C0C0";
     }
     function house3LightsOn() {
       post('/api/house3/on');
       house3lightson = true;
+      document.querySelector('#house3').backgroundColor = "#ff9900";
     }
     function house3LightsOff() {
       post('/api/house3/off');
       house3lightson = false;
+      document.querySelector('#house3').backgroundColor = "#C0C0C0";
     }
     function house4LightsOn() {
       post('/api/house4/on');
       house4lightson = true;
+      document.querySelector('#house4').backgroundColor = "#ff9900";
     }
     function house4LightsOff() {
       post('/api/house4/off');
       house4lightson = false;
+      document.querySelector('#house4').backgroundColor = "#C0C0C0";
     }
   </script>
 
