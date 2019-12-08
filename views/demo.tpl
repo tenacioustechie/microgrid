@@ -87,22 +87,22 @@
     function onTick() {
       console.log("updating power...");
       house1power = updateHouseValue(house1lightson, house1hassolar, house1power);
-      if (house1power == 0) { house1lightson = false; }
+      if (house1power == 0) { house1lightson = false; house1LightsOff(); }
       document.querySelector('#house1-display').textContent = house1power + "%";
       console.log("house1 power", house1power);
 
       house2power = updateHouseValue(house2lightson, house2hassolar, house2power);
-      if (house2power == 0) { house2lightson = false; }
+      if (house2power == 0) { house2lightson = false; house2LightsOff(); }
       document.querySelector('#house2-display').textContent = house2power + "%";
       console.log("house2 power", house2power);
 
       house3power = updateHouseValue(house3lightson, house3hassolar, house3power);
-      if (house3power == 0) { house3lightson = false; }
+      if (house3power == 0) { house3lightson = false; house3LightsOff(); }
       document.querySelector('#house3-display').textContent = house3power + "%";
       console.log("house3 power", house3power);
 
       house4power = updateHouseValue(house4lightson, house4hassolar, house4power);
-      if (house4power == 0) { house4lightson = false; }
+      if (house4power == 0) { house4lightson = false; house4LightsOff(); }
       document.querySelector('#house4-display').textContent = house4power + "%";
       console.log("house4 power", house4power);
     }
