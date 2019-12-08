@@ -84,6 +84,12 @@
     house4hassolar = false;
     house4power = 0;
 
+    document.querySelector('#house1').style.backgroundColor = "#C0C0C0";
+    document.querySelector('#house2').style.backgroundColor = "#C0C0C0";
+    document.querySelector('#house3').style.backgroundColor = "#C0C0C0";
+    document.querySelector('#house4').style.backgroundColor = "#C0C0C0";
+    onTick();
+
     function onTick() {
       console.log("updating power...");
       
