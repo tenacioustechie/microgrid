@@ -11,7 +11,7 @@ if (platform.system() == 'Linux'):
 house1 = 6
 house2 = 13
 house3 = 19
-comcen = 26
+house4 = 26
 
 if ( runGpio):
   GPIO.setmode(GPIO.BCM)
@@ -19,18 +19,18 @@ if ( runGpio):
   GPIO.setup(house1, GPIO.OUT)
   GPIO.setup(house2, GPIO.OUT)
   GPIO.setup(house3, GPIO.OUT)
-  GPIO.setup(comcen, GPIO.OUT)
+  GPIO.setup(house4, GPIO.OUT)
   print( 'LED on')
   GPIO.output(house1, GPIO.HIGH)
   GPIO.output(house2, GPIO.HIGH)
   GPIO.output(house3, GPIO.HIGH)
-  GPIO.output(comcen, GPIO.HIGH)
+  GPIO.output(house4, GPIO.HIGH)
   time.sleep(1)
   print( 'LED off')
   GPIO.output(house1, GPIO.LOW)
   GPIO.output(house2, GPIO.LOW)
   GPIO.output(house3, GPIO.LOW)
-  GPIO.output(comcen, GPIO.LOW)
+  GPIO.output(house4, GPIO.LOW)
 
 def updateHouse( house, onoff):
   # get house io
@@ -42,7 +42,7 @@ def updateHouse( house, onoff):
   elif ( house == 'house3'):
     pin = house3
   else:
-    pin = comcen
+    pin = house4
   print( 'Turning %s state %s ' % (house, onoff) )
   if ( runGpio): 
     if ( onoff == 'on'):
@@ -79,7 +79,7 @@ def index(name):
 
 
 @post('/api/house1/<onoff>')
-def house1post(house, onoff):
+def house1post(onoff):
   if (onoff == 'on'):
     GPIO.output(house1, GPIO.HIGH)
   else:
@@ -102,12 +102,12 @@ def house3post(onoff):
     GPIO.output(house3, GPIO.LOW)
   return (onoff == 'on')
 
-@post('/api/comcen/<onoff>')
-def comcenpost(onoff):
+@post('/api/house4/<onoff>')
+def house4post(onoff):
   if (onoff == 'on'):
-    GPIO.output(comcen, GPIO.HIGH)
+    GPIO.output(house4, GPIO.HIGH)
   else:
-    GPIO.output(comcen, GPIO.LOW)
+    GPIO.output(house4, GPIO.LOW)
   return (onoff == 'on')
 
 
