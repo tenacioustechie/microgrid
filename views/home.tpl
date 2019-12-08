@@ -13,7 +13,7 @@
         ">Welcome to the micro grid</h1>
             </div>
     <div class="linkhome">
-            <a href="mainpage.htm">Continue</a>
+            <a href="demo">Continue</a>
             </div>
 
     
