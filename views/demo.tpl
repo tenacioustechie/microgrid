@@ -15,7 +15,7 @@
       <div class="house-subtext">battery level</div>
       <div class="house-buttons">
         <button onclick="house1LightsOn(); return false;">My Lights on</button>
-        <button onclick="house2LightsOff(); return false;">My Lights off</button>
+        <button onclick="house1LightsOff(); return false;">My Lights off</button>
       </div>
     </div>
 
