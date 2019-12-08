@@ -50,7 +50,7 @@
     </div>
 
     <div class="control-options">
-      <div class="option"><button onclick="return false;">Sell to House 2</button></div>
+      <div class="option"><button onclick="sellToHouse2(); return false;">Sell to House 2</button></div>
       <div class="option"><button onclick="return false;">Sell to House 3</button></div>
       <div class="option"><button onclick="return false;">Donate to Community Centre</button></div>
       <div class="option"><button onclick="return false;">Buy from House 2</button></div>
@@ -86,26 +86,30 @@
 
     function onTick() {
       console.log("updating power...");
+      
       house1power = updateHouseValue(house1lightson, house1hassolar, house1power);
       if (house1power == 0) { house1LightsOff(); }
-      document.querySelector('#house1-display').textContent = house1power + "%";
-      
       console.log("house1 power", house1power);
 
       house2power = updateHouseValue(house2lightson, house2hassolar, house2power);
       if (house2power == 0) { house2LightsOff(); }
-      document.querySelector('#house2-display').textContent = house2power + "%";
       console.log("house2 power", house2power);
 
       house3power = updateHouseValue(house3lightson, house3hassolar, house3power);
       if (house3power == 0) { house3LightsOff(); }
-      document.querySelector('#house3-display').textContent = house3power + "%";
       console.log("house3 power", house3power);
 
       house4power = updateHouseValue(house4lightson, house4hassolar, house4power);
       if (house4power == 0) { house4LightsOff(); }
-      document.querySelector('#house4-display').textContent = house4power + "%";
       console.log("house4 power", house4power);
+
+      updateDisplay();
+    }
+    function updateDisplay() {
+      document.querySelector('#house1-display').textContent = house1power + "%";
+      document.querySelector('#house2-display').textContent = house2power + "%";
+      document.querySelector('#house3-display').textContent = house3power + "%";
+      document.querySelector('#house4-display').textContent = house4power + "%";
     }
     function updateHouseValue(lightOn, solar, power) {
       let p = power;
@@ -125,6 +129,22 @@
       return p;
     }
 
+    function sellToHouse2() {
+      if ( house1power < 40) {
+        alert("you can't sell power when you have less than 20%");
+        return;
+      }
+      // update power for each house
+      if (house2power > 80) {
+        house1power = house1power - (100-house2power);
+        house2power = 100;
+      } else {
+        house1power = house1power - 20;
+        house2power = house2power + 20;
+      }
+      updateDisplay();
+    }
+
     // Adjust this value to set how often the power values updated (in seconds)
     tick = 5; // seconds
     timer = setInterval(onTick, tick * 1000);
@@ -132,42 +152,42 @@
     function house1LightsOn() {
       post('/api/house1/on');
       house1lightson = true;
-      document.querySelector('#house1').backgroundColor = "#ff9900";
+      document.querySelector('#house1').style.backgroundColor = "#ff9900";
     }
     function house1LightsOff() {
       post('/api/house1/off');
       house1lightson = false;
-      document.querySelector('#house1').backgroundColor = "#C0C0C0";
+      document.querySelector('#house1').style.backgroundColor = "#C0C0C0";
     }
     function house2LightsOn() {
       post('/api/house2/on');
       house2lightson = true;
-      document.querySelector('#house2').backgroundColor = "#ff9900";
+      document.querySelector('#house2').style.backgroundColor = "#ff9900";
     }
     function house2LightsOff() {
       post('/api/house2/off');
       house2lightson = false;
-      document.querySelector('#house2').backgroundColor = "#C0C0C0";
+      document.querySelector('#house2').style.backgroundColor = "#C0C0C0";
     }
     function house3LightsOn() {
       post('/api/house3/on');
       house3lightson = true;
-      document.querySelector('#house3').backgroundColor = "#ff9900";
+      document.querySelector('#house3').style.backgroundColor = "#ff9900";
     }
     function house3LightsOff() {
       post('/api/house3/off');
       house3lightson = false;
-      document.querySelector('#house3').backgroundColor = "#C0C0C0";
+      document.querySelector('#house3').style.backgroundColor = "#C0C0C0";
     }
     function house4LightsOn() {
       post('/api/house4/on');
       house4lightson = true;
-      document.querySelector('#house4').backgroundColor = "#ff9900";
+      document.querySelector('#house4').style.backgroundColor = "#ff9900";
     }
     function house4LightsOff() {
       post('/api/house4/off');
       house4lightson = false;
-      document.querySelector('#house4').backgroundColor = "#C0C0C0";
+      document.querySelector('#house4').style.backgroundColor = "#C0C0C0";
     }
   </script>
 
