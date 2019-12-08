@@ -13,29 +13,43 @@
       <div class="house-heading">My House 1</div>
       <div class="house-display" id="house1-display"></div>
       <div class="house-subtext">battery level</div>
+      <div class="house-buttons">
+        <button onclick="house1LightsOn(); return false;">My Lights on</button>
+        <button onclick="house2LightsOff(); return false;">My Lights off</button>
+      </div>
     </div>
 
     <div class="house-display-box">
       <div class="house-heading">House 2</div>
       <div class="house-display" id="house2-display"></div>
       <div class="house-subtext">battery level</div>
+      <div class="house-buttons">
+        <button onclick="house2LightsOn(); return false;">Lights on</button>
+        <button onclick="house2LightsOff(); return false;">Lights off</button>
+      </div>
     </div>
 
     <div class="house-display-box">
       <div class="house-heading">House 3</div>
       <div class="house-display" id="house3-display"></div>
       <div class="house-subtext">battery level</div>
+      <div class="house-buttons">
+        <button onclick="house3LightsOn(); return false;">Lights on</button>
+        <button onclick="house3LightsOff(); return false;">Lights off</button>
+      </div>
     </div>
 
     <div class="house-display-box">
       <div class="house-heading">Community Centre</div>
       <div class="house-display" id="house4-display"></div>
       <div class="house-subtext">battery level</div>
+      <div class="house-buttons">
+        <button onclick="house4LightsOn(); return false;">Lights on</button>
+        <button onclick="house4LightsOff(); return false;">Lights off</button>
+      </div>
     </div>
 
     <div class="control-options">
-      <div class="option"><button onclick="myLightsOn(); return false;">My Lights on</button></div>
-      <div class="option"><button onclick="myLightsOff(); return false;">My Lights off</button></div>
       <div class="option"><button onclick="return false;">Sell to House 2</button></div>
       <div class="option"><button onclick="return false;">Sell to House 3</button></div>
       <div class="option"><button onclick="return false;">Donate to Community Centre</button></div>
@@ -112,15 +126,39 @@
 
     // Adjust this value to set how often the power values updated (in seconds)
     tick = 5; // seconds
-    timer = setInterval(onTick, tick*1000);
+    timer = setInterval(onTick, tick * 1000);
 
-    function myLightsOn() {
+    function house1LightsOn() {
       post('/api/house1/on');
       house1lightson = true;
     }
-    function myLightsOff() {
+    function house1LightsOff() {
       post('/api/house1/off');
       house1lightson = false;
+    }
+    function house2LightsOn() {
+      post('/api/house2/on');
+      house2lightson = true;
+    }
+    function house2LightsOff() {
+      post('/api/house2/off');
+      house2lightson = false;
+    }
+    function house3LightsOn() {
+      post('/api/house3/on');
+      house3lightson = true;
+    }
+    function house3LightsOff() {
+      post('/api/house3/off');
+      house3lightson = false;
+    }
+    function house4LightsOn() {
+      post('/api/house4/on');
+      house4lightson = true;
+    }
+    function house4LightsOff() {
+      post('/api/house4/off');
+      house4lightson = false;
     }
   </script>
 
