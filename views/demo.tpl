@@ -136,8 +136,8 @@
     }
 
     function sellToHouse2() {
-      if ( house1power < 40) {
-        alert("you can't sell power when you have less than 20%");
+      if ( house1power < 30) {
+        alert("you can't sell power when you have less than 30%");
         return;
       }
       // update power for each house
@@ -151,8 +151,8 @@
       updateDisplay();
     }
     function buyFromHouse2() {
-      if ( house2power < 40) {
-        alert("you can't buy power when they have less than 20%");
+      if ( house2power < 30) {
+        alert("you can't buy power when they have less than 30%");
         return;
       }
       // update power for each house
@@ -166,8 +166,8 @@
       updateDisplay();
     }
     function sellToHouse3() {
-      if ( house1power < 40) {
-        alert("you can't sell power when you have less than 20%");
+      if ( house1power < 30) {
+        alert("you can't sell power when you have less than 30%");
         return;
       }
       // update power for each house
@@ -181,8 +181,8 @@
       updateDisplay();
     }
     function buyFromHouse3() {
-      if ( house3power < 40) {
-        alert("you can't buy power when they have less than 20%");
+      if ( house3power < 30) {
+        alert("you can't buy power when they have less than 30%");
         return;
       }
       // update power for each house
@@ -196,8 +196,8 @@
       updateDisplay();
     }
     function sellToHouse4() {
-      if ( house1power < 40) {
-        alert("you can't sell power when you have less than 20%");
+      if ( house1power < 30) {
+        alert("you can't sell power when you have less than 30%");
         return;
       }
       // update power for each house
